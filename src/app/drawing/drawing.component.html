@@ -1,0 +1,17 @@
+<button (click)="saveDrawing()">Çizimi Kaydet</button>
+<button (click)="undo()">Geri Al</button>
+<button (click)="setTool(DrawingTool.LINE)">Line</button>
+<button (click)="setTool(DrawingTool.RECTANGLE)">Rectangle</button>
+<button (click)="setTool(DrawingTool.CIRCLE)">Circle</button>
+<button (click)="setTool(DrawingTool.PEN)">Pen</button>
+<div>
+  <canvas #drawingCanvas 
+          (mousedown)="startDrawing($event)" 
+          (mousemove)="draw($event)" 
+          (mouseup)="stopDrawing()"
+          (mouseleave)="stopDrawing()"
+          width="800" 
+          height="600">
+  </canvas>
+  <canvas #drawingCanvas (mousedown)="startDrawing($event)" (mouseup)="stopDrawing()" (mousemove)="draw($event)" width="800" height="500"></canvas>
+</div>
